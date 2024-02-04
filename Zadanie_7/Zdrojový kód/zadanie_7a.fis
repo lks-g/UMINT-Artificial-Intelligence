@@ -1,0 +1,52 @@
+[System]
+Name='zadanie_7a'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Pollution'
+Range=[0 100]
+NumMFs=4
+MF1='None':'trimf',[-33 0 33]
+MF2='Small':'trimf',[0 33 66]
+MF3='Medium':'trimf',[33 66 100]
+MF4='High':'trimf',[66 100 133]
+
+[Input2]
+Name='Quantity'
+Range=[0 7]
+NumMFs=3
+MF1='Small':'trimf',[-3 0 3]
+MF2='Medium':'trimf',[0.5 3.5 7]
+MF3='Large':'trimf',[4 7 9]
+
+[Output1]
+Name='Washing_time'
+Range=[0 70]
+NumMFs=4
+MF1='Short':'trimf',[-5 10 25]
+MF2='Normal':'trimf',[10 28 45]
+MF3='Long':'trimf',[30 45 60]
+MF4='Very_Long':'trimf',[45 60 75]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+4 1, 2 (1) : 1
+4 2, 3 (1) : 1
+4 3, 4 (1) : 1

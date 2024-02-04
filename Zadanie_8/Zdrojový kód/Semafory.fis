@@ -1,0 +1,69 @@
+[System]
+Name='Semafory'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='Cars_on_Green'
+Range=[0 30]
+NumMFs=5
+MF1='Very_little':'trimf',[-7.5 0 7.5]
+MF2='Little':'trimf',[0 7.5 15]
+MF3='Normal':'trimf',[7.43657505285412 14.9365750528541 22.4365750528541]
+MF4='High':'trimf',[15 22.5 30]
+MF5='Very_high':'trimf',[22.5 30 37.5]
+
+[Input2]
+Name='Cars_on_Red'
+Range=[0 30]
+NumMFs=5
+MF1='Very_little':'trimf',[-7.5 0 7.5]
+MF2='Little':'trimf',[0 7.5 15]
+MF3='Normal':'trimf',[7.5 15 22.5]
+MF4='High':'trimf',[15 22.5 30]
+MF5='Very_high':'trimf',[22.5 30 37.5]
+
+[Output1]
+Name='Interval'
+Range=[0 30]
+NumMFs=5
+MF1='Short':'trimf',[0 7.5 15]
+MF2='Normal':'trimf',[7.5 15 22.5]
+MF3='Long':'trimf',[15 22.5 30]
+MF4='Very_long':'trimf',[22.5 30 33.74]
+MF5='Very_Short':'trimf',[-7.5 0 7.5]
+
+[Rules]
+1 1, 5 (1) : 1
+1 2, 5 (1) : 1
+1 3, 5 (1) : 1
+1 4, 5 (1) : 1
+1 5, 5 (1) : 1
+2 1, 1 (1) : 1
+2 2, 1 (1) : 1
+2 3, 1 (1) : 1
+2 4, 1 (1) : 1
+2 5, 1 (1) : 1
+3 1, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
+3 4, 2 (1) : 1
+3 5, 1 (1) : 1
+4 1, 4 (1) : 1
+4 2, 4 (1) : 1
+4 3, 3 (1) : 1
+4 4, 2 (1) : 1
+4 5, 1 (1) : 1
+5 1, 4 (1) : 1
+5 2, 4 (1) : 1
+5 3, 3 (1) : 1
+5 4, 2 (1) : 1
+5 5, 1 (1) : 1
